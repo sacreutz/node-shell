@@ -1,6 +1,11 @@
 const fs = require('fs');
 
 module.exports = function (){
+
+  process.stdin.on("data", data => {
+
+  const ls = data.toString().trim();
+  if (ls === "ls") {
   fs.readdir('./', 'utf8', (err, files) => {
     if (err) {
       throw err;
@@ -9,5 +14,6 @@ module.exports = function (){
       process.stdout.write("prompt > ");
     }
   })
-
+}
+})
 }

@@ -4,5 +4,5 @@ const ls = require('./ls');
 
 
 pwd();
-//ls();
+ls();
 
