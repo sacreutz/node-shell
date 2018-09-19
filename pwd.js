@@ -1,17 +1,9 @@
 
 
-module.exports = function () {
-  process.stdout.write('prompt > ');
+module.exports = function (done) {
 
-  process.stdin.on("data", data => {
 
-    const pwd = data.toString().trim();
-    if (pwd === "pwd") {
-      process.stdout.write(`${process.cwd()}`);
+      return done(process.cwd());
 
-    }
-    process.stdout.write("\nprompt > ");
-
-  });
 
 }
